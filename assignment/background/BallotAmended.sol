@@ -19,6 +19,7 @@ contract Ballot {
     }
 
     address public chairperson;
+    uint public startTime;
 
     // This declares a state variable that
     // stores a `Voter` struct for each possible address.
@@ -30,7 +31,7 @@ contract Ballot {
     /// Create a new ballot to choose one of `proposalNames`.
     constructor(bytes32[] memory proposalNames) {
         // start time of the contract
-        uint startTime = block.timestamp;
+        startTime = block.timestamp;
         chairperson = msg.sender;
         voters[chairperson].weight = 1;
 
